@@ -1,0 +1,8 @@
+gradio==3.*,>=3.24.1
+huggingface-hub==0.*,>=0.16.4
+lightning==2.*,>=2.0.1
+numpy==1.*,>=1.24.2
+opencv-python==4.*,>=4.7.0
+pillow==9.3.0
+git+https://github.com/facebookresearch/segment-anything.git#egg=segment-anything
+transformers==4.*,>=4.27.4
