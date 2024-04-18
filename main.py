@@ -41,7 +41,7 @@ def process_image(model : LanguageSAM, image_array : np.array, tasks : Dict[str,
     
     # Just debug
     pil_image = Image.fromarray(image_array)
-    pil_image.save("input.jpg")
+    #pil_image.save("input.jpg")
     
     results = [model.predict(pil_image, task["prompt"]) for task in tasks]
     masks, bboxes, phrases, logits = zip(*results)
@@ -176,9 +176,9 @@ def process_image(model : LanguageSAM, image_array : np.array, tasks : Dict[str,
     segmented_image_array = segmented_image_array[...,::-1]
     detections_image_array = detections_image_array[...,::-1]
     
-    cv2.imwrite("output_blurred.jpg", blurred_image_array)
-    cv2.imwrite("output_segmented.jpg", segmented_image_array)
-    cv2.imwrite("output_detections.jpg", detections_image_array)
+    #cv2.imwrite("output_blurred.jpg", blurred_image_array)
+    #cv2.imwrite("output_segmented.jpg", segmented_image_array)
+    #cv2.imwrite("output_detections.jpg", detections_image_array)
 
     return blurred_image_array, segmented_image_array, detections_image_array
 
@@ -231,9 +231,9 @@ def process_bag(bag_path, output_folder, config):
     writer = rosbag2_py.SequentialWriter()
     writer.open(output_storage_options, output_converter_options)
 
-    import debugpy
-    debugpy.listen(5678)
-    debugpy.wait_for_client() 
+    #import debugpy
+    #debugpy.listen(5678)
+    #debugpy.wait_for_client() 
 
     topic_count_dict = defaultdict(int)
     subsample_factor = config["subsample_factor"]
