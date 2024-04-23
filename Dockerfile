@@ -85,7 +85,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # copy source code:
-COPY . /tmp/rosbag2_language_sam
+COPY requirements.txt /tmp/rosbag2_language_sam/
+COPY entrypoint.sh /tmp/rosbag2_language_sam/
 
 # installing python dependencies:
 WORKDIR $HOME/rosbag2_language_sam

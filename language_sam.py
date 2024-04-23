@@ -41,6 +41,7 @@ def load_model_hf(repo_id, filename, ckpt_config_filename, device='cpu'):
 def transform_image(image) -> torch.Tensor:
     transform = T.Compose([
         #T.RandomResize([800], max_size=1333),
+        T.RandomResize([1200], max_size=1200),
         T.ToTensor(),
         T.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225]),
     ])

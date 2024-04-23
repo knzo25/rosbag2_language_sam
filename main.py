@@ -231,10 +231,6 @@ def process_bag(bag_path, output_folder, config):
     writer = rosbag2_py.SequentialWriter()
     writer.open(output_storage_options, output_converter_options)
 
-    import debugpy
-    debugpy.listen(5678)
-    debugpy.wait_for_client() 
-
     topic_count_dict = defaultdict(int)
     subsample_factor = config["subsample_factor"]
     write_blurred_image = config["blurred_image"]
